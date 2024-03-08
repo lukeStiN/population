@@ -3,7 +3,7 @@
 
 Ce tableau de bord interactif a été créé à l'aide de Streamlit et Plotly pour visualiser et analyser les données de population française. L'application permet de filtrer les données par année, âge et sexe, et affiche des graphiques et des indicateurs clés de performance (KPI) en fonction des sélections.
 
-Le tableau de bord est disponible en ligne ici : [population-fr](https://population-fr.streamlit.app/).
+Le tableau de bord est disponible en ligne ici : [population-fr](https://population-fr.streamlit.app/)
 
 ## Fonctionnalités
 
@@ -17,7 +17,7 @@ Le tableau de bord est disponible en ligne ici : [population-fr](https://populat
 1. Assurez-vous d'avoir Python installé sur votre machine
 2. Clonez ce dépôt GitHub en utilisant la commande suivante:
 ```
-git clone https://github.com/votre_utilisateur/nom_depot.git
+git clone https://github.com/lukeStiN/population.git
 ```
 3. Installez les dépendances en exécutant:
 ```
