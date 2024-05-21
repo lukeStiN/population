@@ -1,5 +1,6 @@
-
 # Population Dashboard
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://population-fr.streamlit.app/)
 
 Ce tableau de bord interactif a été créé à l'aide de Streamlit et Plotly pour visualiser et analyser les données de population française. L'application permet de filtrer les données par année, âge et sexe, et affiche des graphiques et des indicateurs clés de performance (KPI) en fonction des sélections.
 
