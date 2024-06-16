@@ -28,3 +28,8 @@ pip install -r requirements.txt
 ```
 streamlit run app.py
 ```
+
+---
+
+[![Site](https://www.luc-estienne.com/web/image/website/1/logo)](https://www.luc-estienne.com/ "Luc Estienne")
+
