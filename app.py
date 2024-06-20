@@ -4,7 +4,13 @@ import numpy as np
 
 import plotly.express as px
 
+# import json
+# from utils import chart_1
+
+# Number.prototype._called = {};
+
 st.set_page_config(page_title='Dash', page_icon="📊", layout='wide')
+st.logo('https://www.luc-estienne.com/web/image/website/1/logo', link='https://www.luc-estienne.com/')
 
 CONFIG = {'displayModeBar': False, 'showAxisDragHandles': False}
 COLORS = {'color_discrete_sequence' : None}
@@ -25,6 +31,13 @@ def load_data(file_path : str) -> pd.DataFrame :
     data['Sexe'] = data['Sexe'].replace({'M': 'Homme', 'F': 'Femme'})
     return data
 
+# @st.cache_data
+# def json_data_1() -> dict :
+#     with open('charts/chart1.json', 'r') as f :
+#         res = json.load(f)
+#     print(res)
+#     return res
+
 data = load_data('data/donnees_pyramide_act.csv')
 
 # SIDEBAR
@@ -44,6 +57,7 @@ st.title('Population française')
 # KPI
 col1, col2, col3, col4 = st.columns(4)
 
+# Simple charts
 if not sexe :
     population_totale = data_annee['Population'].sum()
     population_totale_y_1 = data_annee_1['Population'].sum()
@@ -60,14 +74,17 @@ if not sexe :
 
     evolution_population = temp.groupby('Année')['Population'].sum().reset_index()
 
+    # Line chart
     line_chart = px.line(evolution_population, x='Année', y='Population', title='Evolution de la population depuis 1991')
     st.plotly_chart(line_chart, config=CONFIG)
 
+    # Bar chart
     bar_chart = px.bar(data_annee, x='Age', y='Population', title='Répartion de la population selon l\'age')
     bar_chart.update_layout(bargap=0)
     st.plotly_chart(bar_chart, config=CONFIG)
 
 
+# Multiple charts
 if sexe :
     population_totale = data_annee.sort_values('Sexe').groupby('Sexe')['Population'].sum()
     population_totale_y_1 = data_annee_1.sort_values('Sexe').groupby('Sexe')['Population'].sum()
